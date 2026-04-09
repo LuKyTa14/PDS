@@ -1,4 +1,4 @@
-#  Invertir: invertir una senial significa cambiar su polaridad (multiplicarla por -1). Es el equivalente a un desfase de 180 grados.
+# Invertir: invertir una senial significa cambiar su polaridad (multiplicarla por -1). Es el equivalente a un desfase de 180 grados.
 # Rectificacion: consiste en hacer que toda la senial sea positiva. Si la amplitud es negativa, se invierte su signo;
 
 % Generamos una senial de seno con la funcion del ej anterior
@@ -6,7 +6,7 @@
 subplot(5, 1, 1);
 stem(t,x,'filled'); title('Funcion Orginial');
 
-% Inversion: Si el vector es [0, 2, 3, 1], el inverso es [1, 3, 2, 0]
+% Inversion:  Inversión de Amplitud (o cambio de fase de 180°). e espeja respecto al eje horizontal (tiempo).
 x_invertida = -x;
 subplot(5, 1, 2);
 stem(t, x_invertida, 'r', 'filled'); title('Inversion');
@@ -21,6 +21,7 @@ subplot(5, 1, 4);
 stem(t,x_rectificada_comp,'g','filled'); title('rectificacion onda completa');
 
 % Cuantizacion: Es convertir la senial analogica en digital
+% cantidad limitada de "escalones" para representar esos valores --> L: niveles (L=8)
 x_cuantizada = cuantizacion(x, 8, 2/7);
 subplot(5, 1, 5);
 stem(t,x_cuantizada,'y','filled'); title('cuantizacion');
