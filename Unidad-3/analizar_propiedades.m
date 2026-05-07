@@ -5,8 +5,8 @@ function analizar_propiedades(nombre_senal, t, y)
     y_minimo = min(y);
     y_amplitud = norm(y, inf);
     y_energia = norm(y, 2);
-    y_accion = trapz(t, abs(y));
-    y_potencia = norm(y, 1);
+    y_accion = norm(y,1);
+    y_potencia = mean(y.^2);
     y_rms = sqrt(y_potencia);
 
     % Salida en consola
