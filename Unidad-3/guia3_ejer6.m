@@ -23,7 +23,7 @@ for i = 1:num_notas
     % extraemos el segmentos
     segmento = senal(inicio:fin);
 
-    % pasamos a filas para que dot() no tire error y % limpiamos el nivel de continua
+    % pasamos a filas para que dot() no tire error y limpiamos el nivel de continua
     segmento = segmento(:)';
     segmento = segmento - mean(segmento);
 

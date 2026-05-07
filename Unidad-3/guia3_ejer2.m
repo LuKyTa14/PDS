@@ -1,5 +1,5 @@
 clc; clear all;
-fm = 100;
+fm = 1000;
 t = 0:1/fm:1-1/fm;
 t_inicial = t(1);
 t_final = t(end);

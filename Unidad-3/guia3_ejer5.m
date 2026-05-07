@@ -9,7 +9,7 @@ teclas = [ 1,  2,  3;  4,  5,  6;  7,  8,  9;  11,  0, 12];    % 11 representa '
 % Carga de la señal
 senal = load('te.txt');
 figure(1);
-plot(senal); title('Señal de audio DTMF');
+plot(senal); title('Señal de audio DTMF'); hold on;
 
 % Intervalos de tiempo
 intervalos = [
@@ -21,6 +21,14 @@ intervalos = [
     68800, 74800;
     80300, 86300
 ];
+#Grafico Intervalos
+for i = 1:size(intervalos, 1)
+    inicio = intervalos(i, 1);
+    fin = intervalos(i, 2);
+    ancho = fin - inicio;
+    rectangle('Position', [inicio, -1.5, ancho, 3], 'EdgeColor', 'r');
+end
+hold off;
 
 % DECODIFICACION POR CUADRATURA
 % La formula: sqrt(dot(seg, sin)^2 + dot(seg, cos)^2)

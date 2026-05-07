@@ -13,7 +13,7 @@ t_final = t(end);
 % Generación de señales (capturando la amplitud en la segunda variable)
 [~, senoidal] = generar_senoidal(t_inicial, t_final, fm, fs, fase);
 [~, rampa]    = generar_rampa(t_inicial, t_final, fm, m);
-[~, cuadrada] = generar_cuadrada(t_inicial, t_final, fm, fs, fase); % Nombre corregido
+[~, cuadrada] = generar_cuadrada(t_inicial, t_final, fm, fs, fase);
 aleatoria = randn(size(t)); % Limpiado el espacio extra
 
 % Gráficos compactos

@@ -3,10 +3,10 @@ function analizar_propiedades(nombre_senal, t, y)
     y_medio = mean(y);
     y_maximo = max(y);
     y_minimo = min(y);
-    y_amplitud = (y_maximo - y_minimo) / 2;
-    y_energia = trapz(t, y.^2);
+    y_amplitud = norm(y, inf);
+    y_energia = norm(y, 2);
     y_accion = trapz(t, abs(y));
-    y_potencia = mean(y.^2);
+    y_potencia = norm(y, 1);
     y_rms = sqrt(y_potencia);
 
     % Salida en consola

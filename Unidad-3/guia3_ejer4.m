@@ -117,3 +117,7 @@ grid on;
 
 % Todas son cercanas a 0, lo que quiere decir que todas las senoidale son
 % ortogonales a nuestra funcion cuadrada (lo que tiene sentido).
+
+% una onda cuadrada perfecta y simétrica está compuesta únicamente
+% por su frecuencia fundamental y sus armónicos impares
+% (es decir, senos de 5 Hz, 15 Hz, 25 Hz, 35 Hz, etc.).
