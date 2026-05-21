@@ -15,13 +15,13 @@ f = (-N/2 : N/2-1) * (fs/N);
 % GENERACION DE VENTANAS
 % Ventana Ancha (energia dispersa en el tiempo)
 % Al durar mucho tiempo, el cambio es mas "relajado".
-ancho_1 = 0.4; % Dura 0.8 segundos en total
+ancho_1 = 0.4;
 ventana_ancha = zeros(1, N);
 ventana_ancha(abs(t) <= ancho_1) = 1;
 
 % Ventana Angosta (energia muy concentrada en el tiempo)
 % Al durar solo un instante, tiene flancos de subida y bajada muy bruscos.
-ancho_2 = 0.02; % Dura 0.04 segundos en total
+ancho_2 = 0.04;
 ventana_angosta = zeros(1, N);
 ventana_angosta(abs(t) <= ancho_2) = 1;
 

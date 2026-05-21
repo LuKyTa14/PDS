@@ -16,7 +16,7 @@ k = 0:N-1;
 
 % PROPIEDAD DE RETARDO TEMPORAL
 % formula es: X[k] * e^(-j * 2*pi * k * n0 / N)
-X_ret = X .* exp(-1j*2*pi*k*n0/N);
+X_ret = X .* exp(-1j*2*pi*k*n0 / N);
 
 %  Antitransformada para volver al tiempo
 x_ret = ifft(X_ret);

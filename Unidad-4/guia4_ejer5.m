@@ -33,7 +33,7 @@ xlim([0 50]);
 xticks(0:5:50); % marcas cada 5 Hz
 grid on;
 
-% Grafico 2: Nuestro caso extremo (105 Hz)
+% Grafico 2: Caso extremo (105 Hz)
 subplot(2,1,2);
 stem(f_vec, abs(X_105), 'r', 'filled', 'MarkerSize', 5);
 title('FFT de Señal de 105 Hz');

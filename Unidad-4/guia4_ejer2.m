@@ -69,3 +69,60 @@ fprintf('Producto interno a y c_mod (TIEMPO):  %.4f\n', ort_ac_mod_t);
 fprintf('Producto interno A y C_mod (FRECUENCIA):  %.4f\n', ort_ac_mod_f);
 
 
+% =========================================================
+% GRAFICOS
+figure('Name', 'Ejercicio 2 - Ortogonalidad', 'Position', [100, 100, 1100, 850]);
+
+% --- FILA 1: Señales en el tiempo ---
+subplot(3, 3, 1);
+plot(t, senal_a, 'b', 'LineWidth', 1.2);
+title('a) Seno 2 Hz');
+xlabel('Tiempo (s)'); ylabel('Amplitud');
+ylim([-1.5 1.5]); grid on;
+
+subplot(3, 3, 2);
+plot(t, senal_b, 'r', 'LineWidth', 1.2);
+title('b) Cuadrada 2 Hz');
+xlabel('Tiempo (s)'); ylabel('Amplitud');
+ylim([-1.5 1.5]); grid on;
+
+subplot(3, 3, 3);
+plot(t, senal_c, 'g', 'LineWidth', 1.2);
+title('c) Seno 4 Hz');
+xlabel('Tiempo (s)'); ylabel('Amplitud');
+ylim([-1.5 1.5]); grid on;
+
+% --- FILA 2: Espectros de magnitud ---
+f_vec = (0:N-1) * (fm/N);
+
+subplot(3, 3, 4);
+stem(f_vec(1:20), abs(A_frec(1:20)), 'b', 'filled', 'MarkerSize', 4);
+title('|A[k]| - Seno 2 Hz');
+xlabel('Frecuencia (Hz)'); ylabel('|S[k]|');
+grid on;
+
+subplot(3, 3, 5);
+stem(f_vec(1:20), abs(B_frec(1:20)), 'r', 'filled', 'MarkerSize', 4);
+title('|B[k]| - Cuadrada 2 Hz');
+xlabel('Frecuencia (Hz)'); ylabel('|S[k]|');
+grid on;
+
+subplot(3, 3, 6);
+stem(f_vec(1:20), abs(C_frec(1:20)), 'g', 'filled', 'MarkerSize', 4);
+title('|C[k]| - Seno 4 Hz');
+xlabel('Frecuencia (Hz)'); ylabel('|S[k]|');
+grid on;
+
+% --- FILA 3: Comparacion fuga espectral ---
+subplot(3, 3, 7);
+stem(f_vec(1:20), abs(C_frec(1:20)), 'g', 'filled', 'MarkerSize', 4);
+title('|C[k]| - Seno 4 Hz (sin fuga)');
+xlabel('Frecuencia (Hz)'); ylabel('|S[k]|');
+grid on;
+
+subplot(3, 3, 8);
+stem(f_vec(1:20), abs(C_mod_frec(1:20)), 'm', 'filled', 'MarkerSize', 4);
+title('|Cmod[k]| - Seno 3.5 Hz (con fuga)');
+xlabel('Frecuencia (Hz)'); ylabel('|S[k]|');
+grid on;
+
